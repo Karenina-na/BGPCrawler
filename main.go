@@ -46,6 +46,8 @@ func main() {
 	service.DownLoad()
 	// 启动转换服务
 	service.Transfer()
+	// 启动删除服务
+	service.Delete()
 	// quit
 	quit := make(chan os.Signal)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
