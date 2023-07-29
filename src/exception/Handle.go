@@ -1,7 +1,7 @@
 package exception
 
 import (
-	"BGP/src/util"
+	"BGPCrawler/src/util"
 	"os"
 )
 

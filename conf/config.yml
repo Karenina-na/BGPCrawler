@@ -12,7 +12,7 @@ database:
 
 BGP:
   frequency: 1 # BGP数据采集频率 单位小时
-  storage-path: D:/code/platform/BGP/data/unprocessed # BGP原始数据存储路径
-  processed-path: D:/code/platform/BGP/data/processed # BGP处理后数据存储路径
+  storage-path: D:/code/platform/BGPCrawler/data/unprocessed # BGP原始数据存储路径
+  processed-path: D:/code/platform/BGPCrawler/data/processed # BGP处理后数据存储路径
   storage-time: 1 # BGP原始数据存储 保留时间 单位天
   processed-time: 1 # BGP处理后数据存储 保留时间 单位天

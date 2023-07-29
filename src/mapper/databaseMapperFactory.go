@@ -1,9 +1,9 @@
 package mapper
 
 import (
-	"BGP/src/config"
-	"BGP/src/exception"
-	"BGP/src/util"
+	"BGPCrawler/src/config"
+	"BGPCrawler/src/exception"
+	"BGPCrawler/src/util"
 	"context"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

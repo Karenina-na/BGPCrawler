@@ -1,4 +1,4 @@
-module BGP
+module BGPCrawler
 
 go 1.20
 

@@ -1,10 +1,10 @@
 package Factory
 
 import (
-	"BGP/src/config"
-	"BGP/src/exception"
-	"BGP/src/pool"
-	"BGP/src/util"
+	"BGPCrawler/src/config"
+	"BGPCrawler/src/exception"
+	"BGPCrawler/src/pool"
+	"BGPCrawler/src/util"
 	"github.com/spf13/viper"
 	"os"
 )

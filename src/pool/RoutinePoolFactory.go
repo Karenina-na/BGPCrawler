@@ -1,9 +1,9 @@
 package pool
 
 import (
-	"BGP/src/config"
-	"BGP/src/exception"
-	"BGP/src/util"
+	"BGPCrawler/src/config"
+	"BGPCrawler/src/exception"
+	"BGPCrawler/src/util"
 )
 
 // RoutinePool goroutine池

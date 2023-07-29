@@ -1,11 +1,11 @@
 package service
 
 import (
-	"BGP/src/Factory"
-	"BGP/src/config"
-	"BGP/src/exception"
-	"BGP/src/pool"
-	"BGP/src/util"
+	"BGPCrawler/src/Factory"
+	"BGPCrawler/src/config"
+	"BGPCrawler/src/exception"
+	"BGPCrawler/src/pool"
+	"BGPCrawler/src/util"
 	"time"
 )
 

@@ -1,10 +1,10 @@
 package Factory
 
 import (
-	"BGP/src/exception"
-	"BGP/src/mapper"
-	"BGP/src/pool"
-	"BGP/src/util"
+	"BGPCrawler/src/exception"
+	"BGPCrawler/src/mapper"
+	"BGPCrawler/src/pool"
+	"BGPCrawler/src/util"
 )
 
 // CloseFactory	关闭工厂

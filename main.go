@@ -1,9 +1,9 @@
 package main
 
 import (
-	"BGP/src/Factory"
-	"BGP/src/service"
-	"BGP/src/util"
+	"BGPCrawler/src/Factory"
+	"BGPCrawler/src/service"
+	"BGPCrawler/src/util"
 	"flag"
 	"os"
 	"os/signal"
