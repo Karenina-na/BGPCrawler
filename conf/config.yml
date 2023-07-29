@@ -1,4 +1,3 @@
-# Path: conf\config.yaml
 goroutine:
   max-goroutine: 2000 #goroutine池最大线程数
   core-goroutine: 1000  #goroutine池核心线程数
