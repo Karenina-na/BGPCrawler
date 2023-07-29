@@ -28,9 +28,11 @@ func DownLoad() {
 			}
 		}()
 
+		util.Loglevel(util.Info, "DownLoad", "download-service start")
 		if err := callPython(); err != nil {
 			return err
 		}
+		util.Loglevel(util.Info, "DownLoad", "download-service end")
 
 		for {
 			select {
@@ -72,10 +74,12 @@ func callPython() (E error) {
 	targetFolder := config.BGP.StoragePath
 	days := config.BGP.StorageTime
 
-	util.Run("python " + "./script/download.py" +
+	err := util.Run("python " + "./script/download.py" +
 		" " + url +
 		" " + targetFolder +
 		" " + util.Strval(days))
-
+	if err != nil {
+		exception.HandleException(exception.NewDownloadError("callPython-service", err.Error()))
+	}
 	return nil
 }

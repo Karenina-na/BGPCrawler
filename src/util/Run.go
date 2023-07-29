@@ -8,7 +8,7 @@ import (
 // Run 执行命令
 //
 //	@Description: 执行命令
-func Run(command string) {
+func Run(command string) (E error) {
 	var cmd *exec.Cmd
 
 	os := runtime.GOOS
@@ -21,16 +21,5 @@ func Run(command string) {
 
 	// 命令的输出直接扔掉
 	_, err := cmd.Output()
-	// 命令出错
-	if err != nil {
-		panic(err.Error())
-	}
-	// 命令启动和启动时出错
-	if err := cmd.Start(); err != nil {
-		panic(err.Error())
-	}
-	// 等待结束
-	if err := cmd.Wait(); err != nil {
-		panic(err.Error())
-	}
+	return err
 }

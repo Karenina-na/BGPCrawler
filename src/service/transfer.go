@@ -38,9 +38,12 @@ func Transfer() {
 				return nil
 			case <-time.After(time.Hour * time.Duration(config.BGP.Frequency)): // TODO -----------------------------------
 				println("Transfer-service start")
-				util.Run("./script/transfer.sh" +
+				err := util.Run("./script/transfer.sh" +
 					" " + config.BGP.StoragePath +
 					" " + config.BGP.ProcessPath)
+				if err != nil {
+					exception.HandleException(exception.NewTransferError("Transfer", err.Error()))
+				}
 				println("Transfer-service end")
 			}
 		}

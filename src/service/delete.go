@@ -45,10 +45,13 @@ func Delete() {
 					month = "0" + month
 				}
 				day := util.Strval(d)
-				util.Run("./script/delete.sh" +
+				err := util.Run("./script/delete.sh" +
 					" " + year + month + day +
 					" " + config.BGP.StoragePath +
 					" " + config.BGP.ProcessPath)
+				if err != nil {
+					exception.HandleException(exception.NewDeleteError("Delete-service", err.Error()))
+				}
 				println("Delete-service end")
 			}
 		}
