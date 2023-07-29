@@ -3,6 +3,7 @@ package Factory
 import (
 	"BGP/src/config"
 	"BGP/src/exception"
+	"BGP/src/mapper"
 	"BGP/src/pool"
 	"BGP/src/util"
 	"github.com/spf13/viper"
@@ -39,10 +40,16 @@ func LoadConfigFactory(arg *string) {
 	}
 
 	//初始化协程池
+	util.Loglevel(util.Debug, "LoadConfigFactory", "初始化协程池")
 	if err := pool.InitRoutinePool(); err != nil {
 		exception.HandleException(err)
 	}
-	util.Loglevel(util.Debug, "LoadConfigFactory", "初始化协程池")
+
+	//初始化mongodb
+	util.Loglevel(util.Debug, "LoadConfigFactory", "初始化mongodb")
+	if err := mapper.InitConnect(); err != nil {
+		exception.HandleException(err)
+	}
 }
 
 func loadConfigFactory() (E error) {

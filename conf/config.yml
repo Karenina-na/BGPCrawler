@@ -8,7 +8,7 @@ database:
   host: 172.23.52.164
   port: 27017
   user: root
-  password: root
+  password: weizixiang
 
 BGP:
   frequency: 10 # BGP数据采集频率 单位小时
