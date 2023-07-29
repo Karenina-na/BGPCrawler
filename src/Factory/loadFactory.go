@@ -52,6 +52,10 @@ func LoadConfigFactory(arg *string) {
 	}
 }
 
+// loadConfigFactory	加载配置文件
+//
+//	@Description: 加载配置文件
+//	@return E	错误信息
 func loadConfigFactory() (E error) {
 	defer func() {
 		r := recover()

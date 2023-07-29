@@ -27,15 +27,15 @@ var (
 
 	// BGP BGP参数
 	BGP struct {
-		// Frequency BGP数据采集频率
+		// Frequency BGP数据采集频率	单位：小时
 		Frequency int
 		// StoragePath BGP原始数据存储路径
 		StoragePath string
 		// ProcessPath BGP处理数据存储路径
 		ProcessPath string
-		// StorageTime BGP原始数据存储时间
+		// StorageTime BGP原始数据保留时间	单位：天
 		StorageTime int
-		// ProcessTime BGP处理数据存储时间
+		// ProcessTime BGP处理数据保留时间	单位：天
 		ProcessTime int
 	}
 )

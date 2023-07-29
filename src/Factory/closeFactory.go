@@ -22,4 +22,6 @@ func CloseFactory() {
 	if err != nil {
 		exception.HandleException(err)
 	}
+
+	close(ServiceCloseChan)
 }

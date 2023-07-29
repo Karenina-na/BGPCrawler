@@ -11,6 +11,10 @@ import (
 
 var client *mongo.Client
 
+// InitConnect	初始化数据库
+//
+//	@Description: 初始化数据库
+//	@return E	error
 func InitConnect() (E error) {
 	defer func() {
 		r := recover()
@@ -21,9 +25,6 @@ func InitConnect() (E error) {
 
 	// mongodb
 	clientOptions := options.Client().ApplyURI(config.Database.DatabaseType + "://" +
-		config.Database.DatabaseUser + ":" + config.Database.DatabasePassword +
-		"@" + config.Database.DatabaseHost + ":" + config.Database.DatabasePort)
-	println(config.Database.DatabaseType + "://" +
 		config.Database.DatabaseUser + ":" + config.Database.DatabasePassword +
 		"@" + config.Database.DatabaseHost + ":" + config.Database.DatabasePort)
 
@@ -41,6 +42,10 @@ func InitConnect() (E error) {
 	return nil
 }
 
+// CloseConnect	关闭数据库
+//
+//	@Description: 关闭数据库
+//	@return E	error
 func CloseConnect() (E error) {
 	defer func() {
 		r := recover()
