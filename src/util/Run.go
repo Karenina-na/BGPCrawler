@@ -1,15 +1,24 @@
 package util
 
-import "os/exec"
+import (
+	"os/exec"
+	"runtime"
+)
 
 // Run 执行命令
 //
 //	@Description: 执行命令
 func Run(command string) {
-	// 识别是windows还是linux
-	println(command)
-	cmd := exec.Command("cmd", "/C", command)
-	//cmd := exec.Command("/bin/bash", "-c", command)
+	var cmd *exec.Cmd
+
+	os := runtime.GOOS
+	switch os {
+	case "windows":
+		cmd = exec.Command("cmd", "/C", command)
+	case "linux":
+		cmd = exec.Command("/bin/bash", "-c", command)
+	}
+
 	// 命令的输出直接扔掉
 	_, err := cmd.Output()
 	// 命令出错

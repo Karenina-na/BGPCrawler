@@ -27,7 +27,6 @@ func DownLoad() {
 				E = exception.NewDownloadError("Persistence-service", util.Strval(r))
 			}
 		}()
-		util.Loglevel(util.Info, "DownLoad", "download-service start")
 
 		if err := callPython(); err != nil {
 			return err
@@ -38,10 +37,12 @@ func DownLoad() {
 			case <-Factory.ServiceCloseChan:
 				util.Loglevel(util.Info, "DownLoad", "download-service exit")
 				return nil
-			case <-time.After(time.Second * time.Duration(config.BGP.Frequency)): // 每隔一段时间执行一次
+			case <-time.After(time.Hour * time.Duration(config.BGP.Frequency)): // TODO -----------------------------------
+				util.Loglevel(util.Info, "DownLoad", "download-service start")
 				if err := callPython(); err != nil {
 					return err
 				}
+				util.Loglevel(util.Info, "DownLoad", "download-service end")
 			}
 		}
 

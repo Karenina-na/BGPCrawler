@@ -44,7 +44,8 @@ func main() {
 	Factory.LoadConfigFactory(arg)
 	// 启动下载服务
 	service.DownLoad()
-
+	// 启动转换服务
+	service.Transfer()
 	// quit
 	quit := make(chan os.Signal)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
