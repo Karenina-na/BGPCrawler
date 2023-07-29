@@ -28,8 +28,8 @@ func Transfer() {
 			}
 		}()
 
-		// 等待二小时后执行，错开下载时间
-		time.Sleep(time.Hour * 2)
+		// 等待半小时后执行，错开下载时间
+		time.Sleep(time.Minute * 30)
 
 		for {
 			select {
