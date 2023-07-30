@@ -29,7 +29,7 @@ func Transfer() {
 		}()
 
 		// 等待半小时后执行，错开下载时间
-		time.Sleep(time.Minute * 10)
+		time.Sleep(time.Minute * 5)
 
 		for {
 			select {

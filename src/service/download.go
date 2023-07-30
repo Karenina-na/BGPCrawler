@@ -39,7 +39,7 @@ func DownLoad() {
 			case <-Factory.ServiceCloseChan:
 				util.Loglevel(util.Info, "DownLoad", "download-service exit")
 				return nil
-			case <-time.After(time.Minute * time.Duration(config.BGP.Frequency)): // TODO -----------------------------------
+			case <-time.After(time.Hour * time.Duration(config.BGP.Frequency)): // TODO -----------------------------------
 				util.Loglevel(util.Info, "DownLoad", "download-service start")
 				if err := callPython(); err != nil {
 					return err
