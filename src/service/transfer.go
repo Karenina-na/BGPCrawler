@@ -36,7 +36,7 @@ func Transfer() {
 			case <-Factory.ServiceCloseChan:
 				util.Loglevel(util.Info, "Transfer", "download-service exit")
 				return nil
-			case <-time.After(time.Hour * time.Duration(config.BGP.Frequency)): // TODO -----------------------------------
+			case <-time.After(time.Minute * time.Duration(config.BGP.Frequency)): // TODO -----------------------------------
 				println("Transfer-service start")
 				err := util.Run("./script/transfer.sh" +
 					" " + config.BGP.StoragePath +
