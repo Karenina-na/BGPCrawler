@@ -27,7 +27,15 @@ go build -o main main.go
 ./main
 ```
 
-## License
+## 📝 Notice
+
+you should make the scripts executable before running them.
+
+```bash
+chmod +x ./scripts/*
+```
+
+## 📄 License
 
 [Apache License 2.0](LICENSE)
 ```
