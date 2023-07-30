@@ -16,6 +16,12 @@ func HandleException(err interface{}) {
 		dataBaseExHandle(E)
 	case *SystemError:
 		systemExHandle(E)
+	case *DownloadError:
+		downloadExHandle(E)
+	case *TransferError:
+		transformExHandle(E)
+	case *DeleteError:
+		deleteExHandle(E)
 	default:
 		util.Loglevel(util.Error, "未知错误", util.Strval(err))
 		os.Exit(0)
@@ -43,5 +49,32 @@ func dataBaseExHandle(err *DataBaseError) {
 // @param        err : The exception
 func systemExHandle(err *SystemError) {
 	util.Loglevel(util.Warn, err.Name, err.Message)
+	os.Exit(0)
+}
+
+// downloadExHandle
+//
+//	@Description: Handle the download exception
+//	@param err	: The exception
+func downloadExHandle(err *DownloadError) {
+	util.Loglevel(util.Info, err.Name, err.Message)
+	os.Exit(0)
+}
+
+// transformExHandle
+//
+//	@Description: Handle the transform exception
+//	@param err	: The exception
+func transformExHandle(err *TransferError) {
+	util.Loglevel(util.Info, err.Name, err.Message)
+	os.Exit(0)
+}
+
+// deleteExHandle
+//
+//	@Description: Handle the delete exception
+//	@param err	: The exception
+func deleteExHandle(err *DeleteError) {
+	util.Loglevel(util.Info, err.Name, err.Message)
 	os.Exit(0)
 }
