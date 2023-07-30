@@ -18,7 +18,8 @@ if [ ! -d "$output_dir" ]; then
   exit 1
 fi
 
-for file in "$input_dir"/*; do
+for file in "$input_dir"/*
+do
   if [ -f "$file" ] && [[ "$file" == *.bz2 ]]; then
     output_file="$output_dir/${file##*/}.txt"
     if [ -f "$output_file" ]; then

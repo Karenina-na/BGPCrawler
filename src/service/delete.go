@@ -29,7 +29,7 @@ func Delete() {
 		}()
 
 		// 等待一小时后执行，错开下载和转换时间
-		time.Sleep(time.Hour * 1)
+		time.Sleep(time.Minute * 20)
 
 		for {
 			select {
